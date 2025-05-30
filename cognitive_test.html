@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>認知特性チェック</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    .question { margin-bottom: 1.5rem; }
+    .result { margin-top: 2rem; font-size: 1.2rem; font-weight: bold; color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>認知特性チェック（Q1〜Q10）</h2>
+  <form id="quizForm">
+    <div class="question">
+      <p>Q1）初めて行った場所での目的地の探し方は？</p>
+      <label><input type="radio" name="q1" value="A"> A）地図や景色を見ればたどり着ける</label><br>
+      <label><input type="radio" name="q1" value="B"> B）「右、左」などの道順を覚える</label><br>
+      <label><input type="radio" name="q1" value="C"> C）人に道を聞く</label>
+    </div>
+    <div class="question">
+      <p>Q2）小1の担任の先生を思い出すと？</p>
+      <label><input type="radio" name="q2" value="A"> A）顔や姿</label><br>
+      <label><input type="radio" name="q2" value="B"> B）性格やエピソード</label><br>
+      <label><input type="radio" name="q2" value="C"> C）声や話し方</label>
+    </div>
+    <div class="question">
+      <p>Q3）好きなノートの取り方は？</p>
+      <label><input type="radio" name="q3" value="A"> A）図やイラストがある</label><br>
+      <label><input type="radio" name="q3" value="B"> B）要点をまとめる</label><br>
+      <label><input type="radio" name="q3" value="C"> C）話されたまま書く</label>
+    </div>
+    <div class="question">
+      <p>Q4）小学校の運動会の記憶は？</p>
+      <label><input type="radio" name="q4" value="A"> A）場面が思い浮かぶ</label><br>
+      <label><input type="radio" name="q4" value="B"> B）出来事や感情</label><br>
+      <label><input type="radio" name="q4" value="C"> C）音や声</label>
+    </div>
+    <div class="question">
+      <p>Q5）初対面のクラスメートの印象は？</p>
+      <label><input type="radio" name="q5" value="A"> A）顔や雰囲気</label><br>
+      <label><input type="radio" name="q5" value="B"> B）会話や内容</label><br>
+      <label><input type="radio" name="q5" value="C"> C）声や話し方</label>
+    </div>
+    <div class="question">
+      <p>Q6）昔の思い出を思い浮かべると？</p>
+      <label><input type="radio" name="q6" value="A"> A）その時の光景</label><br>
+      <label><input type="radio" name="q6" value="B"> B）出来事や感情</label><br>
+      <label><input type="radio" name="q6" value="C"> C）会話の内容や声</label>
+    </div>
+    <div class="question">
+      <p>Q7）目を閉じて野菜を思い出すと？</p>
+      <label><input type="radio" name="q7" value="A"> A）野菜の色や形</label><br>
+      <label><input type="radio" name="q7" value="B"> B）料理や分類</label><br>
+      <label><input type="radio" name="q7" value="C"> C）五十音順で思い出す</label>
+    </div>
+    <div class="question">
+      <p>Q8）小さいころに好きだった遊びは？</p>
+      <label><input type="radio" name="q8" value="A"> A）絵を描く</label><br>
+      <label><input type="radio" name="q8" value="B"> B）本やごっこ遊び</label><br>
+      <label><input type="radio" name="q8" value="C"> C）音楽に合わせて体を動かす</label>
+    </div>
+    <div class="question">
+      <p>Q9）授業で発表するなら？</p>
+      <label><input type="radio" name="q9" value="A"> A）図や絵を見せる</label><br>
+      <label><input type="radio" name="q9" value="B"> B）キーワードを見せながら説明</label><br>
+      <label><input type="radio" name="q9" value="C"> C）口頭のみで発表</label>
+    </div>
+    <div class="question">
+      <p>Q10）英語の学び方でしっくりくるのは？</p>
+      <label><input type="radio" name="q10" value="A"> A）動画や映像で学ぶ</label><br>
+      <label><input type="radio" name="q10" value="B"> B）文法や構造を理解する</label><br>
+      <label><input type="radio" name="q10" value="C"> C）音やリスニング教材で学ぶ</label>
+    </div>
+
+    <button type="submit">診断する</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      let countA = 0, countB = 0, countC = 0;
+      for (let i = 1; i <= 10; i++) {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        if (!selected) {
+          alert(`Q${i}が未回答です`);
+          return;
+        }
+        if (selected.value === 'A') countA++;
+        if (selected.value === 'B') countB++;
+        if (selected.value === 'C') countC++;
+      }
+
+      document.getElementById('result').innerHTML =
+        `Aタイプ（視覚優位）：${countA}個<br>Bタイプ（言語優位）：${countB}個<br>Cタイプ（聴覚優位）：${countC}個`;
+    });
+  </script>
+
+</body>
+</html>

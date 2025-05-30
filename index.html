@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>認知特性チェック（Q1〜Q10）</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; max-width: 800px; margin: auto; line-height: 1.6; }
+    .question { margin-bottom: 2rem; }
+    button { font-size: 1.2rem; padding: 12px 24px; background-color: #007BFF; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    .result { margin-top: 2rem; font-size: 1.2rem; font-weight: bold; color: darkblue; }
+  </style>
+</head>
+<body>
+
+  <h2>認知特性チェック（Q1〜Q10）</h2>
+  <form id="quizForm">
+    <div class="question">
+      <p>Q1）初めて行った場所で、あなたは？</p>
+      <label><input type="radio" name="q1" value="A"> A）地図や建物の内装を見れば、視覚的に目的地へたどり着ける</label><br>
+      <label><input type="radio" name="q1" value="B"> B）建物の内装を見て、「右」「左」「まっすぐ」など道順を記憶しながら向かう</label><br>
+      <label><input type="radio" name="q1" value="C"> C）店員や駅員などに行き方を聞く</label>
+    </div>
+    <div class="question">
+      <p>Q2）小1年生の時の担任の先生を思い浮かべてください</p>
+      <label><input type="radio" name="q2" value="A"> A）顔や立ち振る舞いが思い浮かんだ</label><br>
+      <label><input type="radio" name="q2" value="B"> B）思い出やエピソードが思い浮かんだ</label><br>
+      <label><input type="radio" name="q2" value="C"> C）声や話し方が思い浮かんだ</label>
+    </div>
+    <div class="question">
+      <p>Q3）授業のノート、あなたが一番好きなのは？</p>
+      <label><input type="radio" name="q3" value="A"> A）マーカーで色分けやイラストなどを加えたノート</label><br>
+      <label><input type="radio" name="q3" value="B"> B）要点を論理的に整理して、言語化したノート</label><br>
+      <label><input type="radio" name="q3" value="C"> C）先生が話したことをそのまま書き取ったノート</label>
+    </div>
+    <div class="question">
+      <p>Q4）小学校の運動会のことを思い出してください</p>
+      <label><input type="radio" name="q4" value="A"> A）具体的だった場面を思い出す</label><br>
+      <label><input type="radio" name="q4" value="B"> B）楽しかったり悔しかったりした出来事を思い出す</label><br>
+      <label><input type="radio" name="q4" value="C"> C）流れていた音楽やリズム、声を思い出す</label>
+    </div>
+    <div class="question">
+      <p>Q5）新学期、クラスメートの自己紹介で、何が一番印象に残りますか？</p>
+      <label><input type="radio" name="q5" value="A"> A）顔や見た目の雰囲気</label><br>
+      <label><input type="radio" name="q5" value="B"> B）自己紹介の内容やエピソード</label><br>
+      <label><input type="radio" name="q5" value="C"> C）声や話し方の特徴</label>
+    </div>
+    <div class="question">
+      <p>Q6）昔の出来事を思い出すとき</p>
+      <label><input type="radio" name="q6" value="A"> A）自分の目から見た場面を思い出す</label><br>
+      <label><input type="radio" name="q6" value="B"> B）楽しかったり悲しかったりした出来事や気持ちを思い出す</label><br>
+      <label><input type="radio" name="q6" value="C"> C）その時にかけてもらった言葉を思い出す</label>
+    </div>
+    <div class="question">
+      <p>Q7）目を閉じて10秒間でできるだけ多くの野菜を思い浮かべてください</p>
+      <label><input type="radio" name="q7" value="A"> A）野菜の見た目やスーパーの野菜売り場の様子を思い浮かべた</label><br>
+      <label><input type="radio" name="q7" value="B"> B）料理や野菜の種類ごとに整理して思い出していった</label><br>
+      <label><input type="radio" name="q7" value="C"> C）50音順で「あ」から順に野菜の名前を思い出していった</label>
+    </div>
+    <div class="question">
+      <p>Q8）小さい頃に一番好きだった遊びは？</p>
+      <label><input type="radio" name="q8" value="A"> A）絵を描く遊び</label><br>
+      <label><input type="radio" name="q8" value="B"> B）おままごとやごっこ遊び</label><br>
+      <label><input type="radio" name="q8" value="C"> C）歌を歌う遊び</label>
+    </div>
+    <div class="question">
+      <p>Q9）授業で何かを発表するとき、あなたなら？</p>
+      <label><input type="radio" name="q9" value="A"> A）図やイラストをメインにして見せる</label><br>
+      <label><input type="radio" name="q9" value="B"> B）図などを添えつつ、主に言葉を使って説明する</label><br>
+      <label><input type="radio" name="q9" value="C"> C）資料は最小限にして、口頭で発表する</label>
+    </div>
+    <div class="question">
+      <p>Q10）英語の勉強で一番しっくりくるのは？</p>
+      <label><input type="radio" name="q10" value="A"> A）動画教材や絵など視覚的なもので学ぶ</label><br>
+      <label><input type="radio" name="q10" value="B"> B）文法の構成など理論で学ぶ</label><br>
+      <label><input type="radio" name="q10" value="C"> C）会話やリスニング教材で学ぶ</label>
+    </div>
+
+    <button type="submit">診断する</button>
+  </form>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let countA = 0, countB = 0, countC = 0;
+      for (let i = 1; i <= 10; i++) {
+        const sel = document.querySelector(`input[name="q${i}"]:checked`);
+        if (!sel) {
+          alert(`Q${i}が未回答です`);
+          return;
+        }
+        if (sel.value === 'A') countA++;
+        if (sel.value === 'B') countB++;
+        if (sel.value === 'C') countC++;
+      }
+      document.getElementById('result').innerHTML =
+        `Aタイプ（視覚優位）：${countA}個<br>` +
+        `Bタイプ（言語優位）：${countB}個<br>` +
+        `Cタイプ（聴覚優位）：${countC}個<br><br>` +
+        `📸 あとで結果を見返せるように、スクリーンショットを撮っておきましょう！`;
+    });
+  </script>
+
+</body>
+</html>
